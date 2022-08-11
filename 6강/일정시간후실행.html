@@ -1,0 +1,50 @@
+<!-- 비동기
+비동기는 동기의 반댓말 , 실제로 코딩한 순서와는 다르게 동작하는 코드,
+eventlitener가 대표적
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .ball {
+            display: inline-block;
+            border: 1px solid;
+            border-radius: 20px;
+            width: 40px;
+            height: 40px;
+            font-size: 20px;
+            text-align: center;
+            margin-right: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="result">추첨결과?</div>
+    <div id="bouns">보너스 : </div>
+
+    <script>
+        // 피셔-예이츠 셔플 알고리즘
+        const candidate = Array(45).fill().map((v, i) => i + 1);
+        const shuffle = [];
+        while (candidate.length > 0) {
+            const random = Math.floor(Math.random() * candidate.length); // 무작위로 인덱스 뽑기
+            const spliceArray = candidate.splice(random, 1); //뽑은 값은 배열에 들어간다
+            const value = spliceArray[0]; // shuffle배열에 넣는다.
+            shuffle.push(value);
+        }
+        console.log(shuffle);
+        const winBalls = shuffle.slice(0, 6).sort((a, b) => a - b);
+        const bonus = shuffle[6];
+        console.log(winBalls, bonus)
+    </script>
+</body>
+
+</html>
