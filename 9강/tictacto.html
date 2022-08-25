@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>틱택토</title>
+</head>
+
+<body>
+    <script>
+        const { body } = document;
+        const $table = document.createElement('table');
+        const $result = document.createElement('div'); // 결과창
+        const rows = [];
+        let turn = '0'
+
+
+        const checkWinner = (target) => {
+            const rowIndex = target.parentNode.rowIndex;
+            const cellIndex = target.cellIndex;
+            // 세칸 다채움?
+            let hasWinner = false;
+            // 가로줄부터
+            if (
+                rows[rowIndex[0]].textContent === turn &&
+                rows[rowIndex[1]].textContent === turn &&
+                rows[rowIndex[2]].textContent === turn
+            ) {
+                hasWinner = true;
+            }
+            // 가로줄
+        }
+    </script>
+</body>
+
+</html>

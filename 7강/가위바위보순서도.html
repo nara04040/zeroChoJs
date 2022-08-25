@@ -1,0 +1,44 @@
+<!-- 
+    1. 시작 -> 0.05초마다 가위바위보 값을 바꾼다. -> 값에따라 그림이 바뀐다.
+    2. 가위바위보 버튼 클릭 -> 돌아가는 그림을 멈춘다 -> 점수를 계산한다 -> 점수를 표시한다 -> 1초후에 그림을 돌린다.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가위바위보순서도</title>
+    <style>
+        #computer {
+            width: 142px;
+            height: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="computer"></div>
+    <div>
+        <button id="scissors" class="btn">가위</button>
+        <button id="rock" class="btn">바위</button>
+        <button id="paper" class="btn">보</button>
+    </div>
+    <div id="score">0</div>
+
+    <script>
+        const $computer = document.querySelector('#computer');
+        const $score = document.querySelector('#score');
+        const $scissors = document.querySelector('#scissors');
+        const $rock = document.querySelector('#rock');
+        const $paper = document.querySelector('#paper');
+        const IMG_URL = './rsp.png';
+        $computer.style.background = `url(${IMG_URL}) 10px 0;`;
+        $computer.style.backgroundsize = 'auto 200px'
+
+    </script>
+</body>
+
+</html>

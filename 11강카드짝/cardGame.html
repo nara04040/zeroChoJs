@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>card game</title>
+    <style>
+        .card {
+            display: inline-block;
+            margin-right: 20px;
+            margin-bottom: 20px;
+            width: 70px;
+            height: 100px;
+            perspective: 140px;
+        }
+
+        .card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform .8s;
+            transform-style: preserve-3d;
+        }
+
+        .card.flipped .card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .card-front {
+            background: navy;
+        }
+
+        .card-front,
+        .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 1px solid black;
+            backface-visibility: hidden;
+        }
+
+        .card-back {
+            transform: rotateY(180deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrapper"></div>
+    <script>
+        // 카드 생성하기 (빨주노초흰분) 뒷면은 남색만
+        const $wrapper = document.querySelector('#wrapper')
+
+        const total = 12;
+        const colors = ['red', 'orange', 'yellow', 'green', 'white', 'pink'];
+
+        let colorCopy = colors.concat(colors);
+        // .concat 배열이나 값들을 기존 배열에 합쳐서 새 배열을 반환 , 원본수정 x
+        let shuffled = [];
+
+
+    </script>
+</body>
+
+</html>
